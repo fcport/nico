@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicola Pasquinelli - Massaggiatore Professionale | Rimini</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .massage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .booking-form {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .spa-bg {
+            background-color: #FFF8F0;
+        }
+        
+        .oil-drops {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm57-13c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-9-21c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM60 91c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM35 41c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM12 60c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z' fill='%23f59e0b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="spa-bg oil-drops">
+    <!-- Navigazione -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <i class="fas fa-spa text-amber-600 text-2xl mr-2"></i>
+                            <span class="title-font text-gray-700 text-lg font-semibold">Nicola Pasquinelli</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#home" class="py-4 px-2 text-amber-600 border-b-4 border-amber-600 font-medium">Home</a>
+                    <a href="#about" class="py-4 px-2 text-gray-500 hover:text-amber-600 transition duration-300">Chi Sono</a>
+                    <a href="#services" class="py-4 px-2 text-gray-500 hover:text-amber-600 transition duration-300">Servizi</a>
+                    <a href="#testimonials" class="py-4 px-2 text-gray-500 hover:text-amber-600 transition duration-300">Recensioni</a>
+                    <a href="#contact" class="py-4 px-2 text-gray-500 hover:text-amber-600 transition duration-300">Contatti</a>
+                    <a href="#booking" class="py-2 px-4 bg-amber-600 text-white rounded-md hover:bg-amber-700 transition duration-300 ml-4">Prenota Ora</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li><a href="#home" class="block text-sm px-2 py-4 text-white bg-amber-600 font-semibold">Home</a></li>
+                <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-amber-600 transition duration-300">Chi Sono</a></li>
+                <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-amber-600 transition duration-300">Servizi</a></li>
+                <li><a href="#testimonials" class="block text-sm px-2 py-4 hover:bg-amber-600 transition duration-300">Recensioni</a></li>
+                <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-amber-600 transition duration-300">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sezione Hero -->
+    <section id="home" class="hero text-white pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="title-font text-4xl md:text-6xl font-bold mb-6">Scopri il <span class="text-amber-300">Vero Relax</span></h1>
+                    <p class="text-xl mb-8">Massaggi professionali a Rimini con Nicola Pasquinelli. Trattamenti personalizzati per alleviare lo stress, ridurre il dolore e ripristinare l'equilibrio del tuo corpo.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#booking" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">Prenota un Massaggio</a>
+                        <a href="#services" class="bg-transparent hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-6 border border-white rounded-lg transition duration-300 text-center">I Nostri Servizi</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio rilassante" class="rounded-lg shadow-2xl w-full max-w-md">
+                        <div class="absolute -bottom-6 -right-6 bg-white text-gray-800 p-4 rounded-lg shadow-lg hidden md:block">
+                            <div class="flex items-center">
+                                <div class="bg-amber-100 p-3 rounded-full mr-3">
+                                    <i class="fas fa-award text-amber-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">15+ Anni</p>
+                                    <p class="text-sm">di Esperienza</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Chi Sono -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1562325476-8222a1683325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nicola Pasquinelli" class="rounded-lg shadow-xl w-full max-w-xs md:max-w-md">
+                        <div class="absolute -bottom-5 -left-5 bg-amber-600 text-white p-3 rounded-lg shadow-lg">
+                            <p class="font-bold">Nicola Pasquinelli</p>
+                            <p class="text-sm">Massaggiatore Professionale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h2 class="title-font text-3xl md:text-4xl font-bold mb-6 text-gray-800">Chi Sono</h2>
+                    <p class="text-gray-600 mb-6">Benvenuto nel mio studio nella bellissima Rimini. Con oltre 15 anni di esperienza in massaggi terapeutici, mi dedico ad aiutare i miei clienti a raggiungere il massimo benessere attraverso trattamenti personalizzati.</p>
+                    <p class="text-gray-600 mb-8">Il mio percorso nel massaggio terapeutico è iniziato a Firenze dove mi sono formato sotto la guida di maestri massaggiatori. Combino tecniche tradizionali italiane con approcci terapeutici moderni per creare un'esperienza di guarigione unica.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-certificate text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Certificazioni</h4>
+                                <p class="text-gray-600">Certificato in massaggio svedese, deep tissue, sportivo e con pietre calde.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-heart text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Filosofia</h4>
+                                <p class="text-gray-600">Credo nel trattare la persona nella sua interezza - corpo, mente e spirito - per un benessere completo.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Dove Sono</h4>
+                                <p class="text-gray-600">Ubicazione comoda nel centro di Rimini con facile accesso ai mezzi pubblici.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Clienti</h4>
+                                <p class="text-gray-600">Ho aiutato centinaia di clienti, da atleti a impiegati, a trovare sollievo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-flex items-center text-amber-600 font-bold hover:text-amber-700 transition duration-300">
+                        Contattami
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Servizi -->
+    <section id="services" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-gray-800">I Miei Servizi</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ogni massaggio è personalizzato in base alle tue esigenze specifiche, che tu cerchi relax, sollievo dal dolore o recupero da un infortunio.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servizio 1 -->
+                <div class="massage-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio Svedese" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-spa text-amber-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Massaggio Svedese</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Un massaggio delicato e rilassante che migliora la circolazione, allevia la tensione muscolare e promuove il relax generale.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">€70 - 60 min</span>
+                            <a href="#booking" class="text-amber-600 hover:text-amber-700 font-medium">Prenota Ora</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servizio 2 -->
+                <div class="massage-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio Deep Tissue" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-bone text-amber-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Massaggio Deep Tissue</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Agisce sugli strati più profondi di muscoli e tessuto connettivo per alleviare dolori cronici e tensioni muscolari.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">€85 - 60 min</span>
+                            <a href="#booking" class="text-amber-600 hover:text-amber-700 font-medium">Prenota Ora</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servizio 3 -->
+                <div class="massage-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio Sportivo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-running text-amber-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Massaggio Sportivo</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Progettato per gli atleti per prevenire infortuni, prepararsi agli eventi e recuperare dopo le competizioni.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">€90 - 60 min</span>
+                            <a href="#booking" class="text-amber-600 hover:text-amber-700 font-medium">Prenota Ora</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servizio 4 -->
+                <div class="massage-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio con Pietre Calde" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-fire text-amber-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Massaggio con Pietre Calde</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pietre calde vengono posizionate su punti chiave del corpo per rilassare profondamente i muscoli e migliorare il flusso energetico.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">€95 - 60 min</span>
+                            <a href="#booking" class="text-amber-600 hover:text-amber-700 font-medium">Prenota Ora</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servizio 5 -->
+                <div class="massage-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio Aromaterapico" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-leaf text-amber-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Massaggio Aromaterapico</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Combina il massaggio con oli essenziali per aumentare il relax, alleviare lo stress and promuovere la guarigione.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">€80 - 60 min</span>
+                            <a href="#booking" class="text-amber-600 hover:text-amber-700 font-medium">Prenota Ora</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Servizio 6 -->
+                <div class="massage-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Massaggio di Coppia" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-amber-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-heart text-amber-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Massaggio di Coppia</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Goditi massaggi affiancati con il tuo partner in un ambiente privato e rilassante.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">€150 - 60 min</span>
+                            <a href="#booking" class="text-amber-600 hover:text-amber-700 font-medium">Prenota Ora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#booking" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-flex items-center">
+                    Vedi Tutti i Pacchetti
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Recensioni -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-gray-800">Recensioni dei Clienti</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Non credere solo a noi. Ecco cosa dicono alcuni dei miei clienti sulla loro esperienza.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recensione 1 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Nicola ha delle mani magiche! Dopo una sola seduta di massaggio deep tissue, il mio mal di schiena cronico è diminuito significativamente. La sua conoscenza dell'anatomia è impressionante e crea un'atmosfera molto rilassante."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Maria Rossi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Maria Rossi</h4>
+                            <p class="text-gray-500 text-sm">Rimini</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recensione 2 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Come atleta professionista, mi affido al massaggio sportivo di Nicola per mantenere le mie prestazioni al top. La sua comprensione degli infortuni sportivi e del recupero è eccezionale. Lo consiglio vivamente!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Luca Bianchi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Luca Bianchi</h4>
+                            <p class="text-gray-500 text-sm">Calciatore Professionista</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recensione 3 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Il massaggio con pietre calde è stato assolutamente divino! Nicola ha creato un'atmosfera così tranquilla e ha adattato perfettamente la pressione alle mie esigenze. Sono uscita sentendomi completamente rigenerata."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophia Verdi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sophia Verdi</h4>
+                            <p class="text-gray-500 text-sm">Turista dalla Germania</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center text-amber-600 font-bold hover:text-amber-700 transition duration-300">
+                    Lascia la Tua Recensione
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Prenotazione -->
+    <section id="booking" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-amber-600 text-white p-10">
+                        <h2 class="title-font text-3xl font-bold mb-6">Prenota la Tua Seduta</h2>
+                        <p class="mb-8">Pronto a sperimentare i benefici del massaggio terapeutico professionale? Compila il modulo e ti risponderò entro 24 ore per confermare il tuo appuntamento.</p>
+                        
+                        <div class="mb-8">
+                            <h3 class="font-bold text-xl mb-4">Orari di Apertura</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span>Lunedì - Venerdì</span>
+                                    <span>9:00 - 19:00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Sabato</span>
+                                    <span>10:00 - 16:00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Domenica</span>
+                                    <span>Chiuso</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-xl mb-4">Informazioni di Contatto</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-3"></i>
+                                    <span>Via Roma 123, Rimini, Italia</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone mr-3"></i>
+                                    <span>+39 0541 123456</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope mr-3"></i>
+                                    <span>nicola@massaggirimini.it</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-10">
+                        <form id="appointmentForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Numero di Telefono</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Servizio</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                                    <option value="" disabled selected>Seleziona un servizio</option>
+                                    <option value="Massaggio Svedese">Massaggio Svedese</option>
+                                    <option value="Massaggio Deep Tissue">Massaggio Deep Tissue</option>
+                                    <option value="Massaggio Sportivo">Massaggio Sportivo</option>
+                                    <option value="Massaggio con Pietre Calde">Massaggio con Pietre Calde</option>
+                                    <option value="Massaggio Aromaterapico">Massaggio Aromaterapico</option>
+                                    <option value="Massaggio di Coppia">Massaggio di Coppia</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="date" class="block text-gray-700 font-medium mb-2">Data Preferita</label>
+                                <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="time" class="block text-gray-700 font-medium mb-2">Orario Preferito</label>
+                                <input type="time" id="time" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Richieste Speciali</label>
+                                <textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Prenota Appuntamento
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold mb-4 text-gray-800">Contattami</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hai domande o vuoi prenotare un appuntamento? Sentiti libero di contattarmi attraverso uno di questi canali.</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
+                            <h3 class="text-xl font-bold text-gray-800 mb-6">Informazioni di Contatto</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-map-marker-alt text-amber-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Dove Sono</h4>
+                                        <p class="text-gray-600">Via Roma 123, 47921 Rimini RN, Italia</p>
+                                        <a href="https://maps.google.com" target="_blank" class="text-amber-600 hover:text-amber-700 text-sm mt-1 inline-block">Vedi su Google Maps</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-phone text-amber-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Telefono</h4>
+                                        <p class="text-gray-600">+39 0541 123456</p>
+                                        <p class="text-gray-600 text-sm">Lunedì-Venerdì, 9-19</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-envelope text-amber-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                        <p class="text-gray-600">nicola@massaggirimini.it</p>
+                                        <p class="text-gray-600 text-sm">Risposta entro 24 ore</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-share-alt text-amber-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Social Media</h4>
+                                        <div class="flex space-x-4 mt-2">
+                                            <a href="#" class="text-gray-600 hover:text-amber-600 transition duration-300">
+                                                <i class="fab fa-facebook-f text-xl"></i>
+                                            </a>
+                                            <a href="#" class="text-gray-600 hover:text-amber-600 transition duration-300">
+                                                <i class="fab fa-instagram text-xl"></i>
+                                            </a>
+                                            <a href="#" class="text-gray-600 hover:text-amber-600 transition duration-300">
+                                                <i class="fab fa-whatsapp text-xl"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 md:pl-8">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
+                            <h3 class="text-xl font-bold text-gray-800 mb-6">Mandami un Messaggio</h3>
+                            
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label for="contactName" class="block text-gray-700 font-medium mb-1">Il Tuo Nome</label>
+                                    <input type="text" id="contactName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="contactEmail" class="block text-gray-700 font-medium mb-1">La Tua Email</label>
+                                    <input type="email" id="contactEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="contactSubject" class="block text-gray-700 font-medium mb-1">Oggetto</label>
+                                    <input type="text" id="contactSubject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="contactMessage" class="block text-gray-700 font-medium mb-1">Messaggio</label>
+                                    <textarea id="contactMessage" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mt-4">
+                                    Invia Messaggio
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mappa -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.143800112191!2d12.5653153153668!3d43.82416197911092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d8045d395c4a9%3A0x3eabd623a0c4d4a3!2sRimini%2C%20Province%20of%20Rimini%2C%20Italy!5e0!3m2!1sen!2sus!4v1689874567890!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-spa text-amber-400 text-2xl mr-2"></i>
+                        <span class="title-font text-xl font-semibold">Nicola Pasquinelli</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">Servizi professionali di massoterapia a Rimini, Italia. Aiuto i clienti a trovare sollievo, relax e rigenerazione.</p>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Link Veloci</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-400 transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition duration-300">Chi Sono</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-amber-400 transition duration-300">Servizi</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-amber-400 transition duration-300">Recensioni</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition duration-300">Contatti</a></li>
+                    </ul>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Servizi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Massaggio Svedese</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Deep Tissue</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Massaggio Sportivo</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Pietre Calde</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Aromaterapia</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contatti</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-amber-400 mr-2"></i>
+                            <span class="text-gray-400">Via Roma 123, Rimini</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-amber-400 mr-2"></i>
+                            <span class="text-gray-400">+39 0541 123456</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-amber-400 mr-2"></i>
+                            <span class="text-gray-400">nicola@massaggirimini.it</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="bg-gray-700 hover:bg-amber-600 text-white p-2 rounded-full transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-amber-600 text-white p-2 rounded-full transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-amber-600 text-white p-2 rounded-full transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Nicola Pasquinelli - Massaggiatore Professionale. Tutti i diritti riservati.</p>
+                <p class="mt-2 text-sm">Progettato con <i class="fas fa-heart text-amber-400"></i> per il tuo benessere</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottone Torna Su -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-amber-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Menu mobile
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Gestione invio form
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Grazie per la tua richiesta di prenotazione! Nicola ti contatterà a breve per confermare l\'appuntamento.');
+            this.reset();
+        });
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Grazie per il tuo messaggio! Nicola ti risponderà al più presto.');
+            this.reset();
+        });
+        
+        // Bottone torna su
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Scorrimento fluido per i link di navigazione
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Chiudi il menu mobile se aperto
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
